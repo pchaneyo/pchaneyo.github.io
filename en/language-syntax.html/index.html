@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="fr"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Syntax | CYK Framework</title>
+<title>Syntaxe | CYK Framework</title>
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Syntax" />
-<meta property="og:locale" content="en" />
+<meta property="og:title" content="Syntaxe" />
+<meta property="og:locale" content="fr" />
 <meta name="description" content="CYK Framework XML Syntax to program full stack web applications" />
 <meta property="og:description" content="CYK Framework XML Syntax to program full stack web applications" />
 <link rel="canonical" href="http://localhost:4000/en/language-syntax.html/" />
@@ -14,9 +14,9 @@
 <meta property="og:site_name" content="CYK Framework" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Syntax" />
+<meta property="twitter:title" content="Syntaxe" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"CYK Framework XML Syntax to program full stack web applications","headline":"Syntax","url":"http://localhost:4000/language-syntax.html/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"CYK Framework XML Syntax to program full stack web applications","headline":"Syntaxe","url":"http://localhost:4000/language-syntax.html/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/en/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/en/feed.xml" title="CYK Framework" /></head>
 <body><header class="site-header" role="banner">
@@ -35,20 +35,273 @@
           
           <a class="page-link" href="/"> Français </a>
           
-          <a class="page-link" href="/en/about/">About</a><a class="page-link" href="/en/language-syntax.html/">Syntax</a></div>
+          <a class="page-link" href="/en/about/">About</a><a class="page-link" href="/en/language-syntax-en.html">Syntax</a><a class="page-link" href="/en/language-syntax.html/">Syntaxe</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1 id="cyk-language-syntax">CYK Language syntax</h1>
+        <h1 id="syntaxe-des-instructions-cyk">Syntaxe des instructions CYK</h1>
+
+<h2 id="sommaire">Sommaire</h2>
 <ul>
-  <li>Mobile ou Desktop</li>
-  <li>Full Stack Web Application</li>
-  <li>Langage orienté objet déclaratif</li>
-  <li>Application Exemple : https://cyk-compta.herokuapp.com</li>
+  <li><a href="#syntaxe-des-instructions-cyk">Syntaxe des instructions CYK</a>
+    <ul>
+      <li><a href="#sommaire">Sommaire</a></li>
+      <li><a href="#conventions-typographiques">Conventions typographiques</a></li>
+      <li><a href="#types-de-données">Types de données</a></li>
+      <li><a href="#déclaration-de-données-primitives">Déclaration de données primitives</a>
+        <ul>
+          <li><a href="#déclaration-de-string-chaine-de-caractères">Déclaration de <code class="language-plaintext highlighter-rouge">string</code> (chaine de caractères)</a>
+            <ul>
+              <li><a href="#exemples">Exemples</a></li>
+            </ul>
+          </li>
+          <li><a href="#déclaration-de-nombre">Déclaration de nombre</a>
+            <ul>
+              <li><a href="#exemples-1">Exemples</a></li>
+            </ul>
+          </li>
+          <li><a href="#déclaration-de-datatime">Déclaration de <code class="language-plaintext highlighter-rouge">datatime</code></a></li>
+        </ul>
+      </li>
+      <li><a href="#instructions-de-contrôle">Instructions de Contrôle</a>
+        <ul>
+          <li><a href="#instruction-conditionelle">Instruction Conditionelle</a></li>
+          <li><a href="#instruction-while">Instruction While</a></li>
+          <li><a href="#instruction-loop">Instruction Loop</a></li>
+          <li><a href="#instruction-break">Instruction break</a></li>
+        </ul>
+      </li>
+      <li><a href="#instruction-affectation">Instruction Affectation</a></li>
+      <li><a href="#instruction-stringexec">Instruction Stringexec</a></li>
+      <li><a href="#instruction-parallel">Instruction Parallel</a></li>
+      <li><a href="#définition-de-fonction">Définition de fonction</a>
+        <ul>
+          <li><a href="#exemple--la-fonction-factorielle">Exemple : la fonction factorielle</a></li>
+        </ul>
+      </li>
+      <li><a href="#instruction-appel-de-fonction">Instruction Appel de Fonction</a>
+        <ul>
+          <li><a href="#function">Function</a></li>
+          <li><a href="#methode-dobjet">Methode d’Objet</a></li>
+          <li><a href="#méthode-dun-module">Méthode d’un Module</a></li>
+        </ul>
+      </li>
+      <li><a href="#format-des-expressions">Format des expressions</a>
+        <ul>
+          <li><a href="#"></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h1 id="to-be-done">To be done</h1>
+<h2 id="conventions-typographiques">Conventions typographiques</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Elément</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">literal</code></td>
+      <td>nom de commandes ou options à taper tel quel</td>
+    </tr>
+    <tr>
+      <td>[ ]</td>
+      <td>les éléments optionnels sont entre crochets. Les attributs optionnels sont encadrés par des crochets avec un fond différent</td>
+    </tr>
+    <tr>
+      <td>normal</td>
+      <td>un élément défini par une autre règle syntaxique</td>
+    </tr>
+    <tr>
+      <td>|</td>
+      <td>la barre verticale sépare des éléments optionnels alternatifs exclusifs les uns des autres</td>
+    </tr>
+    <tr>
+      <td>…</td>
+      <td>les points de suspension indiquent que l’élément précédent peut être répété une ou plusieurs fois</td>
+    </tr>
+    <tr>
+      <td>{ }</td>
+      <td>les accolades regroupent les éléments situés entre elles en un seul élément pour appliquer un opérateur … ou |</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="types-de-données">Types de données</h2>
+<ul>
+  <li>Texte :</li>
+  <li>Nombre : <code class="language-plaintext highlighter-rouge">&lt;number/&gt;</code></li>
+  <li>Heure : <code class="language-plaintext highlighter-rouge">&lt;datetime/&gt;</code></li>
+  <li>Booléen : <code class="language-plaintext highlighter-rouge">&lt;boolean/&gt;</code></li>
+  <li>Object : <code class="language-plaintext highlighter-rouge">&lt;object/&gt;</code></li>
+  <li>Module : <code class="language-plaintext highlighter-rouge">&lt;module/&gt;</code></li>
+  <li>Fonction : <code class="language-plaintext highlighter-rouge">&lt;function/&gt;</code></li>
+  <li>Undefined</li>
+</ul>
+
+<h2 id="déclaration-de-données-primitives">Déclaration de données primitives</h2>
+
+<h3 id="déclaration-de-string-chaine-de-caractères">Déclaration de <code class="language-plaintext highlighter-rouge">string</code> (chaine de caractères)</h3>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;string</span> <span class="err">[</span> <span class="na">name=</span><span class="s">"identifier"</span> <span class="err">]</span> <span class="err">[</span> <span class="na">literal=</span><span class="s">""</span> <span class="err">]</span> <span class="nt">&gt;</span> 
+  expression  | text_literal  | 
+<span class="nt">&lt;/string&gt;</span>
+</code></pre></div></div>
+<ul>
+  <li>Si l’attribut <code class="language-plaintext highlighter-rouge">literal</code> est spécifié, le contenu de la balise n’est pas évalué en tant qu’expression mais considéré comme un texte litéral</li>
+  <li>Un contenu de balise vide est équivalent à la valeur <code class="language-plaintext highlighter-rouge">undefined</code></li>
+  <li>La XML CDATA est acceptée</li>
+  <li>L’attribut <code class="language-plaintext highlighter-rouge">name</code> est facultatif : utile dans le cas de l’initialisation d’une liste de données anonymes</li>
+</ul>
+
+<h4 id="exemples">Exemples</h4>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"person_1"</span><span class="nt">&gt;</span> "John Doe" <span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"person_2"</span> <span class="na">literal=</span><span class="s">""</span><span class="nt">&gt;</span>John Doe<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"math_formula_1"</span><span class="nt">&gt;</span> <span class="cp">&lt;![CDATA[ "x &lt; y" ]]&gt;</span> <span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"math_formula_2"</span> <span class="na">literal=</span><span class="s">""</span><span class="nt">&gt;</span> <span class="cp">&lt;![CDATA[ x &lt; y ]]&gt;</span> <span class="nt">&lt;/string&gt;</span>
+</code></pre></div></div>
+<h3 id="déclaration-de-nombre">Déclaration de nombre</h3>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;number</span> <span class="err">[</span> <span class="na">name=</span><span class="s">"identifier"</span> <span class="err">]</span> <span class="nt">&gt;</span> *expression* | undefined | <span class="nt">&lt;/number&gt;</span>  
+</code></pre></div></div>
+<h4 id="exemples-1">Exemples</h4>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;number</span> <span class="na">name=</span><span class="s">"id"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;number</span> <span class="na">name=</span><span class="s">"intvalue"</span><span class="nt">&gt;</span> 12 <span class="nt">&lt;/number&gt;</span>
+<span class="nt">&lt;number</span> <span class="na">name=</span><span class="s">"amount"</span><span class="nt">&gt;</span> 10.25 <span class="nt">&lt;/number&gt;</span>
+</code></pre></div></div>
+
+<h3 id="déclaration-de-datatime">Déclaration de <code class="language-plaintext highlighter-rouge">datatime</code></h3>
+
+<h2 id="instructions-de-contrôle">Instructions de Contrôle</h2>
+
+<h3 id="instruction-conditionelle">Instruction Conditionelle</h3>
+
+<p><em>conditional_instruction :</em></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;if&gt;</span>   
+  <span class="nt">&lt;condition&gt;</span> expression <span class="nt">&lt;/condition&gt;</span>   
+  <span class="nt">&lt;then&gt;</span>  
+    instruction ...    
+  <span class="nt">&lt;/then&gt;</span>  
+  [      
+  <span class="nt">&lt;condition&gt;</span> expression <span class="nt">&lt;/condition&gt;</span>   
+  <span class="nt">&lt;then&gt;</span>   
+    instruction ...  
+  <span class="nt">&lt;/then&gt;</span>   
+  ] ...   
+  [   
+  <span class="nt">&lt;else&gt;</span>   
+    instruction ...     
+  <span class="nt">&lt;/else&gt;</span>  
+  ]    
+<span class="nt">&lt;/if&gt;</span>
+</code></pre></div></div>
+
+<h3 id="instruction-while">Instruction While</h3>
+
+<p><em>while_instruction :</em></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;while&gt;</span>    
+  <span class="nt">&lt;condition&gt;</span> expression <span class="nt">&lt;/condition&gt;</span>   
+  <span class="nt">&lt;then&gt;</span>   
+    instruction ...   
+  <span class="nt">&lt;/then&gt;</span>  
+<span class="nt">&lt;/while&gt;</span>
+</code></pre></div></div>
+
+<p>Sortie de boucle par <code class="language-plaintext highlighter-rouge">&lt;break/&gt;</code>
+Itération suivante par ‘<continue></continue>`</p>
+
+<h3 id="instruction-loop">Instruction Loop</h3>
+<p><em>loop_instruction :</em></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;loop&gt;</span>   
+  instruction ...      
+<span class="nt">&lt;/loop&gt;</span>
+</code></pre></div></div>
+
+<h3 id="instruction-break">Instruction break</h3>
+<p><em>break_instruction :</em></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;break&gt;</span>   
+  [ expression ]   
+<span class="nt">&lt;/break&gt;</span>
+</code></pre></div></div>
+<p>Si <em>expression</em> est présente, elle est évaluée
+Si le résultat est équivalent à VRAI, le programme quitte le bloc en cours
+Si <em>expression</em> est absente, le programme quitte le bloc en cours</p>
+
+<h2 id="instruction-affectation">Instruction Affectation</h2>
+
+<p><em>set_instruction :</em></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;set</span> <span class="na">name=</span><span class="s">"identifier"</span><span class="nt">&gt;</span> expression <span class="nt">&lt;/set&gt;</span>
+<span class="nt">&lt;let</span> <span class="na">name=</span><span class="s">"identifier"</span><span class="nt">&gt;</span> expression <span class="nt">&lt;/let&gt;</span>
+</code></pre></div></div>
+
+<p>Les noms de balise <code class="language-plaintext highlighter-rouge">set</code> et <code class="language-plaintext highlighter-rouge">let</code> ont la même signification</p>
+<h2 id="instruction-stringexec">Instruction Stringexec</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;stringexec&gt;</span> expression <span class="nt">&lt;/stringexec&gt;</span>
+</code></pre></div></div>
+<p>L’expression est évaluée en tant que chaine, puis considérée comme un texte de programme qui est exécuté</p>
+
+<h2 id="instruction-parallel">Instruction Parallel</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;parallel&gt;</span>   
+  instruction ...     
+<span class="nt">&lt;/parallel&gt;</span>
+</code></pre></div></div>
+<p>Chaque instruction dans le bloc est exécuté en parallèle des autres.
+L’instruction <code class="language-plaintext highlighter-rouge">&lt;parallel/&gt;</code> se termine lorsque toutes les intrutions du bloc sont terminées.</p>
+
+<h2 id="définition-de-fonction">Définition de fonction</h2>
+
+<h3 id="exemple--la-fonction-factorielle">Exemple : la fonction factorielle</h3>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;function</span> <span class="na">name=</span><span class="s">"fact"</span> <span class="na">returns=</span><span class="s">"result: number"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;number</span> <span class="na">name=</span><span class="s">"N"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;block&gt;</span>
+            <span class="nt">&lt;if&gt;</span>
+                <span class="nt">&lt;condition&gt;</span><span class="cp">&lt;![CDATA[ N &lt;= 0]]&gt;</span><span class="nt">&lt;/condition&gt;</span>
+                <span class="nt">&lt;then&gt;</span>
+                    <span class="nt">&lt;let</span> <span class="na">name=</span><span class="s">"result"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/let&gt;</span>
+                <span class="nt">&lt;/then&gt;</span>
+                <span class="nt">&lt;else&gt;</span>
+                    <span class="nt">&lt;number</span> <span class="na">name=</span><span class="s">"fact1"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/number&gt;</span>
+                    <span class="nt">&lt;call</span> <span class="na">function=</span><span class="s">"fact"</span> <span class="na">returns=</span><span class="s">"fact1"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;number</span> <span class="na">name=</span><span class="s">"N"</span><span class="nt">&gt;</span>N - 1<span class="nt">&lt;/number&gt;</span>
+                    <span class="nt">&lt;/call&gt;</span>
+                    <span class="nt">&lt;let</span> <span class="na">name=</span><span class="s">"result"</span><span class="nt">&gt;</span>N * fact1<span class="nt">&lt;/let&gt;</span>
+                <span class="nt">&lt;/else&gt;</span>
+            <span class="nt">&lt;/if&gt;</span>
+        <span class="nt">&lt;/block&gt;</span>
+    <span class="nt">&lt;/function&gt;</span>
+</code></pre></div></div>
+<h2 id="instruction-appel-de-fonction">Instruction Appel de Fonction</h2>
+
+<h3 id="function">Function</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;call</span> <span class="na">function=</span><span class="s">"identifier"</span> <span class="err">[</span> <span class="na">returns=</span><span class="s">"identifier : datatype"</span> <span class="err">]</span> <span class="nt">&gt;</span>   
+  declare_instruction ...   
+<span class="nt">&lt;/call&gt;</span>
+</code></pre></div></div>
+
+<h3 id="methode-dobjet">Methode d’Objet</h3>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;call</span> <span class="na">object=</span><span class="s">"identifier"</span> <span class="na">method=</span><span class="s">"identifier"</span> <span class="err">[</span> <span class="na">returns=</span><span class="s">"identifier : datatype"</span> <span class="err">]</span> <span class="nt">&gt;</span>   
+  declare_instruction ...    
+<span class="nt">&lt;/call&gt;</span>
+</code></pre></div></div>
+
+<h3 id="méthode-dun-module">Méthode d’un Module</h3>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;call</span> <span class="na">module=</span><span class="s">"identifier"</span> <span class="na">method=</span><span class="s">"identifier"</span> <span class="err">[</span> <span class="na">returns=</span><span class="s">"identifier: datatype*"</span> <span class="err">]</span> <span class="nt">&gt;</span>   
+  declare_instruction ...    
+<span class="nt">&lt;/call&gt;</span>
+</code></pre></div></div>
+
+<h2 id="format-des-expressions">Format des expressions</h2>
+
+<p>###</p>
 
       </div>
     </main><footer class="site-footer h-card">
