@@ -292,7 +292,7 @@
         <xs:annotation>
             <xs:documentation>
                 if instruction is similar to a case in other languages. You can give several pairs of (condition, then block) and a final [else] block.
-                The instruction will terminate when the first condition is verified and the corresponding [then] block is executed. 
+                The instruction will terminate when the first condition is verified and the corresponding [then] block is executed. See <a href="https://www.cyklang.net/reference/#ifInstruction">Reference manual</a>
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
