@@ -59,8 +59,11 @@ La page de téléchargement se présente comme suit :</p>
 
 <p>Ouvrez un terminal et tapez la commande</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node -v Cela devrait afficher la version du logiciel Node installé.
-</code></pre></div></div>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>node <span class="nt">-v</span>
+<span class="go">
+v16.11.0
+</span></code></pre></div></div>
+<p>Cela devrait afficher la version du logiciel Node installé.</p>
 
 <h2 id="installer-docker-desktop-mac-windows">Installer Docker Desktop (Mac, Windows)</h2>
 
@@ -81,36 +84,31 @@ Après la procédure d’installation, l’ordinateur doit redémarrer pour term
 
 <h2 id="install-cyklang-cli-command-line-interface">Install CYKLang CLI (Command Line Interface)</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo npm install @cyklang/cli -g
-</code></pre></div></div>
-
-<p>Le résultat devrait être le suivant :</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>added 18 packages, and audited 19 packages in 14s
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>npm <span class="nb">install</span> @cyklang/cli <span class="nt">-g</span>
+<span class="go">
+added 18 packages, and audited 19 packages in 14s
 
 2 packages are looking for funding
 run `npm fund` for details
 
 found 0 vulnerabilities
-</code></pre></div></div>
+</span></code></pre></div></div>
 
 <h2 id="initialiser-un-nouveau-répertoire-avec-cyk-init">Initialiser un nouveau répertoire avec cyk init</h2>
 
 <p>Créer au préalable un nouveau dossier qui contiendra votre application
 A l’intérieur de ce dossier, tapez la commande :</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cyk init
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>cyk init
 </code></pre></div></div>
 
 <h2 id="lancer-docker-compose-up">Lancer docker compose up</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>docker compose up
 </code></pre></div></div>
-
 <h2 id="tester-lapplication">Tester l’application</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:3000
-</code></pre></div></div>
+<p><a href="http://localhost:3000">http://localhost:3000</a></p>
 
 <p>Si vous voyez l’écran suivant, bravo ! Vous avez correctement installé l’application.</p>
 
