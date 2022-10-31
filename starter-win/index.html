@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CYK Framework | A Full Stack Web Applications Framework</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="CYK Framework" />
+<meta property="og:locale" content="fr" />
+<meta name="description" content="A Full Stack Web Applications Framework" />
+<meta property="og:description" content="A Full Stack Web Applications Framework" />
+<link rel="canonical" href="https://pchaneyo.github.io/home/starter-win/" />
+<meta property="og:url" content="https://pchaneyo.github.io/home/starter-win/" />
+<meta property="og:site_name" content="CYK Framework" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CYK Framework" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A Full Stack Web Applications Framework","headline":"CYK Framework","url":"https://pchaneyo.github.io/home/starter-win/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://pchaneyo.github.io/home/feed.xml" title="CYK Framework" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">CYK Framework</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/why-use-me/">Argumentaire</a><a class="page-link" href="/getting-started/">Pour démarrer</a><a class="page-link" href="/compta-intro/">Démo</a><a class="page-link" href="/reference/">Référence</a><a class="page-link" href="/about/">A propos</a>
+          
+          <a class="page-link" href="/en/"> <img src="/images/english.png" height="20"/> English </a>
+          
+        </div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="pour-démarrer-sous-windows">Pour démarrer sous Windows</h1>
+
+<ul>
+  <li>
+    <p>Après avoir installé les logiciels pré-requis, nous installons avec Node/NPM un CLI (Command Line Interface) ou interface en ligne de commande regroupé dans une commande unique <code class="language-plaintext highlighter-rouge">cyk</code>.</p>
+  </li>
+  <li>
+    <p>Puis en utilisant Git, nous clonons un projet de démonstration du langage consistant à gérer une base de données de films et d’acteurs.</p>
+  </li>
+  <li>
+    <p>Docker nous permettra de faire fonctionner localement un serveur de base de données Postgresql et un serveur NodeJS.</p>
+  </li>
+  <li>
+    <p>Enfin le code source sera édité avec Visual Studio Code mais n’importe quel éditeur adapté à l’édition de code XML peut convenir.</p>
+  </li>
+</ul>
+
+<h2 id="etape-1----installer-les-logiciels-pré-requis">Etape 1 -  Installer les logiciels pré-requis</h2>
+
+<p>Installer si ce n’est déja fait les logiciels pré-requis :</p>
+<ul>
+  <li><a href="#install_git">Git pour Windows</a></li>
+  <li><a href="#install_nodejs">NodeJS</a></li>
+  <li><a href="#install_docker">Docker Desktop</a></li>
+  <li><a href="#install_code">Visual Studio Code</a></li>
+</ul>
+
+<p>Pour plus de détails sur l’installation de ces logiciels <a href="#prerequisite">en fin de ce document</a></p>
+
+<h2 id="etape-2---créer-un-dossier-disque-hébergeant-lapplication">Etape 2 - Créer un dossier disque hébergeant l’application</h2>
+
+<p>Positionnez-vous au préalable dans le dossier où vous souhaitez créer le dossier application qui portera le nom de <code class="language-plaintext highlighter-rouge">cyk-demo</code></p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john&gt;</span><span class="w"> </span>git clone https://github.com/pchaneyo/cyk-demo.git
+<span class="go">
+Cloning into 'cyk-demo'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (11/11), done.
+Receiving objects: 100% (19/19), 10.30 MiB | 3.99 MiB/seused 0
+Receiving objects: 100% (19/19), 12.94 MiB | 4.69 MiB/s, done.
+Resolving deltas: 100% (6/6), done.
+</span></code></pre></div></div>
+
+<h2 id="etape-3---installer-la-commande-cyk-par-npm">Etape 3 - Installer la commande cyk par NPM</h2>
+
+<h3 id="positionnez-vous-dabord-dans-le-dossier-cyk-demo">Positionnez-vous d’abord dans le dossier <code class="language-plaintext highlighter-rouge">cyk-demo</code>:</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john&gt;</span><span class="w"> </span><span class="nb">cd </span>cyk-demo
+<span class="go">
+</span><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="installez-ensuite-la-commande-cyk-avec-loutil-npm">Installez ensuite la commande cyk avec l’outil NPM</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>npm <span class="nb">install</span> @cyklang/cli <span class="nt">-g</span>
+<span class="go">
+changed 18 packages, and audited 19 packages in 16s
+
+2 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+</span></code></pre></div></div>
+
+<p>L’option <code class="language-plaintext highlighter-rouge">-g</code> (global) permet de disposer de la commande <code class="language-plaintext highlighter-rouge">cyk</code> à tout endroit. Vous devez être administrateur de votre système pour pouvoir l’utiliser.
+Sans l’option <code class="language-plaintext highlighter-rouge">-g</code> la commande <code class="language-plaintext highlighter-rouge">cyk</code> sera installée dans le répertoire en cours seulement</p>
+
+<h3 id="vérifiez-que-la-commande-cyk-a-été-bien-installée">Vérifiez que la commande cyk a été bien installée</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk <span class="nt">-h</span>
+<span class="go">
+Usage: cyk [options] [command]
+
+cyklang CLI
+
+Options:
+  -V, --version              output the version number
+  -h, --help                 display help for command
+
+Commands:
+  init                       initialize a folder with files necessary for a cyklang project
+  asset                      manage assets
+  a                          manage assets
+  module                     manage modules
+  m                          manage modules
+  user [options]             manage users in cyk_user table
+  u [options]                manage users in cyk_user table
+  query
+  q
+  table [options]            import/export table rows
+  t [options]                import/export table rows
+</span><span class="gp">  test [options] &lt;files...&gt;</span><span class="w">  </span><span class="nb">test </span>script
+<span class="gp">  run [options] &lt;files...&gt;</span><span class="w">   </span>run module
+<span class="go">  help [command]             display help for command
+
+</span></code></pre></div></div>
+
+<h2 id="etape-4---initialisez-les-variables-denvironnement-avec-la-commande-cyk-init">Etape 4 - Initialisez les variables d’environnement avec la commande cyk init</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk init
+<span class="go">
+created .env
+created docker-compose.yml
+</span></code></pre></div></div>
+
+<p>La commande <code class="language-plaintext highlighter-rouge">cyk init</code> crée dans le répertoire courant :</p>
+<ul>
+  <li>le fichier .env</li>
+  <li>le fichier docker-compose.yml</li>
+</ul>
+
+<h2 id="etape-5---démarrez-les-containers-docker">Etape 5 - Démarrez les containers Docker</h2>
+
+<h3 id="lancez-dabord-docker-desktop">Lancez d’abord Docker Desktop</h3>
+
+<h3 id="lancez-docker-compose">Lancez Docker Compose</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>docker compose up <span class="nt">-d</span>
+<span class="go">
+
+</span></code></pre></div></div>
+
+<p>L’option <code class="language-plaintext highlighter-rouge">-d</code> (detach) permet de redonner la main directement et de ne pas bloquer l’interpréteur de commandes.</p>
+
+<p>Testez que le serveur est bien installé dans un navigateur avec le lien :</p>
+
+<p><a href="http://localhost:3000">http://localhost:3000</a></p>
+
+<p>Si vous voyez l’écran suivant, bravo ! Vous avez correctement installé les containers Docker.</p>
+
+<p><img src="/images/index_default.png" alt="Index par défaut" /></p>
+
+<h2 id="etape-6---uploader-les-modules-xml">Etape 6 - Uploader les modules XML</h2>
+
+<h3 id="listez-le-contenu-du-dossier-avec-la-commande-dir">Listez le contenu du dossier avec la commande DIR</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span><span class="nb">dir</span>
+<span class="go">
+ Le volume dans le lecteur C s’appelle Windows
+ Le numéro de série du volume est 8C0F-24DD
+
+ Répertoire de C:\Users\phili\Projects\cyk-demo
+
+</span><span class="gp">31/10/2022  16:09    &lt;DIR&gt;</span><span class="w">          </span><span class="nb">.</span>
+<span class="gp">31/10/2022  16:09    &lt;DIR&gt;</span><span class="w">          </span>..
+<span class="go">31/10/2022  16:09               881 .env
+31/10/2022  12:05                20 .gitignore
+31/10/2022  12:02            11 903 actor_select.xml
+</span><span class="gp">31/10/2022  05:56    &lt;DIR&gt;</span><span class="w">          </span>data
+<span class="go">31/10/2022  12:02             2 639 db_init.xml
+31/10/2022  16:09             1 084 docker-compose.yml
+31/10/2022  12:02            10 786 film.xml
+</span><span class="gp">31/10/2022  07:42    &lt;DIR&gt;</span><span class="w">          </span>node_modules
+<span class="go">31/10/2022  07:42            11 919 package-lock.json
+31/10/2022  07:42                57 package.json
+               8 fichier(s)           39 289 octets
+               4 Rép(s)  47 970 877 440 octets libres
+</span></code></pre></div></div>
+
+<h3 id="insérez-les-xml-dans-la-base-de-données">Insérez les XML dans la base de données</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk module upload db_init.xml actor_select.xml film.xml
+<span class="go">
+DBREMOTE_URL http://localhost:3000
+module update db_init access undefined description undefined
+module db_init updated
+module update actor_select access undefined description actor module
+module actor_select updated
+module update film access undefined description film module
+module film updated
+</span></code></pre></div></div>
+
+<h2 id="etape-7---créez-les-tables-et-les-requêtes-de-la-base-de-données">Etape 7 - Créez les tables et les requêtes de la base de données</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk run db_init.xml
+<span class="go">
+DBREMOTE_URL http://localhost:3000
+Module db_init has been executed
+</span></code></pre></div></div>
+
+<h2 id="etape-8---chargez-les-tables-de-la-base-de-données">Etape 8 - Chargez les tables de la base de données</h2>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk table import <span class="nt">-d</span> data actor film film_actor
+<span class="go">
+
+</span></code></pre></div></div>
+
+<h2 id="etape-9---associer-lutilisateur-au-module-film">Etape 9 - Associer l’utilisateur au module film</h2>
+
+<h3 id="lister-les-utilisateurs">Lister les utilisateurs</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk user list
+<span class="go">
+DBREMOTE_URL http://localhost:3000
+order_by user_name
+colws 0
+                                List of users
+ID | user_name |     user_email     | user_access | user_appli | user_disable
+---+-----------+--------------------+-------------+------------+-------------
+ 1 | cyk       | my-email@my-domain | admin       |            | false
+---+-----------+--------------------+-------------+------------+-------------
+Number of lines : 1
+</span></code></pre></div></div>
+
+<h3 id="modifier-le-champ-user_appli-de-lutilisateur">Modifier le champ user_appli de l’utilisateur</h3>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk user update <span class="nt">-i</span> 1 <span class="nt">-m</span> film
+<span class="go">
+DBREMOTE_URL http://localhost:3000
+
+</span><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk user list
+<span class="go">
+DBREMOTE_URL http://localhost:3000
+order_by user_name
+colws 0
+                                List of users
+ID | user_name |     user_email     | user_access | user_appli | user_disable
+---+-----------+--------------------+-------------+------------+-------------
+ 1 | cyk       | my-email@my-domain | admin       | film       | false
+---+-----------+--------------------+-------------+------------+-------------
+Number of lines : 1
+
+</span></code></pre></div></div>
+
+<p>Après la connexion, l’utilisateur cyk executera maintenant le module film</p>
+
+<p><img src="/images/module_film_form.png" alt="Film module" /></p>
+
+<p><a name="prerequisite"></a></p>
+<h1 id="logiciels-dont-linstallation-est-pré-requise">Logiciels dont l’installation est pré-requise</h1>
+
+<p><a name="install_git"></a></p>
+<h2 id="installer-git-pour-windows">Installer Git pour Windows</h2>
+
+<p>Aller au <a href="https://git-scm.com">site de téléchargement de Git</a>
+La page de téléchargement devrait se présenter ainsi :</p>
+
+<p><img src="/images/git_download_win.png" alt="Page de téléchargement de Git pour Windows" /></p>
+
+<p>Téléchargez et installer Git pour Windows</p>
+
+<p><a name="install_nodejs"></a></p>
+<h2 id="installer-nodejs">Installer NodeJS</h2>
+
+<p>Aller au <a href="https://www.nodejs.org">site de NodeJS</a>
+La page de téléchargement se présente comme suit :</p>
+
+<p><img src="/images/nodejs_homepage.png" alt="Page d'accueil de nodejs.org" /></p>
+
+<ul>
+  <li>Choisissez la version 16 LTS (Long Term Support)</li>
+  <li>Téléchargez et lancez le programme d’installation</li>
+  <li>Il n’est pas nécessaire d’installer l’option pour compiler les modules natifs</li>
+</ul>
+
+<p>Ouvrez un terminal et tapez la commande</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\phili&gt;</span><span class="w"> </span>node <span class="nt">-v</span>
+<span class="go">
+v16.11.0
+</span></code></pre></div></div>
+<p>Cela devrait afficher la version du logiciel Node installé.</p>
+
+<p><a name="install_docker"></a></p>
+<h2 id="installer-docker-desktop-mac-windows">Installer Docker Desktop (Mac, Windows)</h2>
+
+<p>Aller sur le <a href="https://www.docker.com">site de Docker</a> :</p>
+
+<p><img src="/images/docker_homepage.png" alt="Page d'accueil de Docker" /></p>
+
+<p>Téléchargez et installez Docker Desktop
+Après la procédure d’installation, l’ordinateur doit redémarrer pour terminer la configuration de l’environnement.</p>
+
+<p><a name="install_code"></a></p>
+<h2 id="installer-visual-studio-code">Installer Visual Studio Code</h2>
+
+<p>Aller sur le <a href="https://code.visualstudio.com/">site de visual studio code</a></p>
+
+<p><img src="/images/vsc_homepage.png" alt="Accueil Visual Studio Code" /></p>
+
+<p>Téléchargez et installez la dernière version stable de Visual Studio Code</p>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">CYK Framework</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">CYK Framework</li><li><a class="u-email" href="mailto:philippe.cyk@outlook.fr">philippe.cyk@outlook.fr</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/pchaneyo"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">pchaneyo</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A Full Stack Web Applications Framework</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
