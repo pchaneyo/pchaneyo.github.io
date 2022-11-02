@@ -40,36 +40,32 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1 id="pour-démarrer-sous-windows">Pour démarrer sous Windows</h1>
+        <h1 id="installer-lenvironnement-de-développement-sous-windows">Installer l’environnement de développement sous Windows</h1>
 
-<ul>
-  <li>
-    <p>Après avoir installé les logiciels pré-requis, nous installons avec Node/NPM un CLI (Command Line Interface) ou interface en ligne de commande regroupé dans une commande unique <code class="language-plaintext highlighter-rouge">cyk</code>.</p>
-  </li>
-  <li>
-    <p>Puis en utilisant Git, nous clonons un projet de démonstration du langage consistant à gérer une base de données de films et d’acteurs.</p>
-  </li>
-  <li>
-    <p>Docker nous permettra de faire fonctionner localement un serveur de base de données Postgresql et un serveur NodeJS.</p>
-  </li>
-  <li>
-    <p>Enfin le code source sera édité avec Visual Studio Code mais n’importe quel éditeur adapté à l’édition de code XML peut convenir.</p>
-  </li>
-</ul>
+<p>Nous allons installer sur le poste de travail une mini application dénommée <code class="language-plaintext highlighter-rouge">cyk-demo</code>. Cette application gère une base de données d’acteurs et de films.</p>
 
-<h2 id="etape-1----installer-les-logiciels-pré-requis">Etape 1 -  Installer les logiciels pré-requis</h2>
+<p>Les étapes principales sont les suivantes :</p>
 
-<p>Installer si ce n’est déja fait les logiciels pré-requis :</p>
-<ul>
-  <li><a href="#install_git">Git pour Windows</a></li>
-  <li><a href="#install_nodejs">NodeJS</a></li>
-  <li><a href="#install_docker">Docker Desktop</a></li>
-  <li><a href="#install_code">Visual Studio Code</a></li>
-</ul>
+<p>1 - Télécharger le code source <code class="language-plaintext highlighter-rouge">cyk-demo</code> avec le logiciel Git</p>
 
-<p>Pour plus de détails sur l’installation de ces logiciels <a href="#prerequisite">en fin de ce document</a></p>
+<p>2 - Installez les serveurs en local avec le logiciel Docker</p>
 
-<h2 id="etape-2---créer-un-dossier-disque-hébergeant-lapplication">Etape 2 - Créer un dossier disque hébergeant l’application</h2>
+<p>3 - Installer l’application <code class="language-plaintext highlighter-rouge">cyk-demo</code> avec l’outil en ligne de commande <code class="language-plaintext highlighter-rouge">cyk</code></p>
+
+<h2 id="etape-1---télécharger-le-code-source-cyk-demo-avec-git">Etape 1 - Télécharger le code source <code class="language-plaintext highlighter-rouge">cyk-demo</code> avec Git</h2>
+
+<p><a name="install_git"></a></p>
+
+<h3 id="etape-11-installer-git-pour-windows">Etape 1.1 Installer Git pour Windows</h3>
+
+<p>Aller au <a href="https://git-scm.com">site de téléchargement de Git</a>
+La page de téléchargement devrait se présenter ainsi :</p>
+
+<p><img src="/images/git_download_win.png" alt="Page de téléchargement de Git pour Windows" /></p>
+
+<p>Téléchargez et installer Git pour Windows</p>
+
+<h3 id="etape-12---créer-un-dossier-disque-hébergeant-lapplication">Etape 1.2 - Créer un dossier disque hébergeant l’application</h3>
 
 <p>Positionnez-vous au préalable dans le dossier où vous souhaitez créer le dossier application qui portera le nom de <code class="language-plaintext highlighter-rouge">cyk-demo</code></p>
 
@@ -83,16 +79,40 @@ Receiving objects: 100% (19/19), 10.30 MiB | 3.99 MiB/seused 0
 Receiving objects: 100% (19/19), 12.94 MiB | 4.69 MiB/s, done.
 Resolving deltas: 100% (6/6), done.
 </span></code></pre></div></div>
+<h2 id="etape-2---installez-les-serveurs-en-local-avec-le-logiciel-docker">Etape 2 - Installez les serveurs en local avec le logiciel Docker</h2>
 
-<h2 id="etape-3---installer-la-commande-cyk-par-npm">Etape 3 - Installer la commande cyk par NPM</h2>
+<p><a name="install_nodejs"></a></p>
 
-<h3 id="positionnez-vous-dabord-dans-le-dossier-cyk-demo">Positionnez-vous d’abord dans le dossier <code class="language-plaintext highlighter-rouge">cyk-demo</code>:</h3>
+<h3 id="etape-21-installer-nodejs">Etape 2.1 Installer NodeJS</h3>
+
+<p>Aller au <a href="https://www.nodejs.org">site de NodeJS</a>
+La page de téléchargement se présente comme suit :</p>
+
+<p><img src="/images/nodejs_homepage.png" alt="Page d'accueil de nodejs.org" /></p>
+
+<ul>
+  <li>Choisissez la version 16 LTS (Long Term Support)</li>
+  <li>Téléchargez et lancez le programme d’installation</li>
+  <li>Il n’est pas nécessaire d’installer l’option pour compiler les modules natifs</li>
+</ul>
+
+<p>Ouvrez un terminal et tapez la commande</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\phili&gt;</span><span class="w"> </span>node <span class="nt">-v</span>
+<span class="go">
+v16.11.0
+</span></code></pre></div></div>
+<p>Cela devrait afficher la version du logiciel Node installé.</p>
+
+<h3 id="etape-22---installer-la-commande-cyk-par-npm">Etape 2.2 - Installer la commande cyk par NPM</h3>
+
+<h4 id="positionnez-vous-dabord-dans-le-dossier-cyk-demo">Positionnez-vous d’abord dans le dossier <code class="language-plaintext highlighter-rouge">cyk-demo</code>:</h4>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john&gt;</span><span class="w"> </span><span class="nb">cd </span>cyk-demo
 <span class="go">
 </span><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w">
 </span></code></pre></div></div>
-<h3 id="installez-ensuite-la-commande-cyk-avec-loutil-npm">Installez ensuite la commande cyk avec l’outil NPM</h3>
+<h4 id="installez-ensuite-la-commande-cyk-avec-loutil-npm">Installez ensuite la commande cyk avec l’outil NPM</h4>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>npm <span class="nb">install</span> @cyklang/cli <span class="nt">-g</span>
 <span class="go">
@@ -137,13 +157,39 @@ Commands:
 
 </span></code></pre></div></div>
 
-<h2 id="etape-4---initialisez-les-variables-denvironnement-avec-la-commande-cyk-init">Etape 4 - Initialisez les variables d’environnement avec la commande cyk init</h2>
+<p><a name="install_docker"></a></p>
+
+<h3 id="etape-23-installer-docker-desktop">Etape 2.3 Installer Docker Desktop</h3>
+
+<p>Aller sur le <a href="https://www.docker.com">site de Docker</a> :</p>
+
+<p><img src="/images/docker_homepage.png" alt="Page d'accueil de Docker" /></p>
+
+<p>Téléchargez et installez Docker Desktop
+Après la procédure d’installation, l’ordinateur doit redémarrer pour terminer la configuration de l’environnement.</p>
+
+<h3 id="etape-24---initialisez-les-variables-denvironnement-avec-la-commande-cyk-init">Etape 2.4 - Initialisez les variables d’environnement avec la commande <code class="language-plaintext highlighter-rouge">cyk init</code></h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk init
-<span class="go">
+<span class="go">? Postgresql Port 5432
+? NodeJS Port 3000
+? Admin User Login cyk
+? Admin User Password cyk
+? Admin Use Email my-email@my-domain
+? confirm: Yes
 created .env
 created docker-compose.yml
+
 </span></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">cyk init</code> demande interactivement les paramètres suivants :</p>
+<ul>
+  <li>Le port d’écoute du serveur de base de données Postgresql</li>
+  <li>Le port d’écoute du serveur Node</li>
+  <li>L’identifiant de l’utilisateur administrateur</li>
+  <li>Le mot de passe de cet utilisateur</li>
+  <li>L’adresse email de cet utilisateur</li>
+</ul>
 
 <p>La commande <code class="language-plaintext highlighter-rouge">cyk init</code> crée dans le répertoire courant :</p>
 <ul>
@@ -151,11 +197,11 @@ created docker-compose.yml
   <li>le fichier docker-compose.yml</li>
 </ul>
 
-<h2 id="etape-5---démarrez-les-containers-docker">Etape 5 - Démarrez les containers Docker</h2>
+<h3 id="etape-25---démarrez-les-containers-docker">Etape 2.5 - Démarrez les containers Docker</h3>
 
-<h3 id="lancez-dabord-docker-desktop">Lancez d’abord Docker Desktop</h3>
+<h4 id="lancez-dabord-docker-desktop">Lancez d’abord Docker Desktop</h4>
 
-<h3 id="lancez-docker-compose">Lancez Docker Compose</h3>
+<h4 id="lancez-docker-compose">Lancez Docker Compose</h4>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>docker compose up <span class="nt">-d</span>
 <span class="go">
@@ -172,9 +218,9 @@ created docker-compose.yml
 
 <p><img src="/images/index_default.png" alt="Index par défaut" /></p>
 
-<h2 id="etape-6---uploader-les-modules-xml">Etape 6 - Uploader les modules XML</h2>
+<h2 id="etape-3----installer-lapplication-cyk-demo-avec-loutil-en-ligne-de-commande-cyk">Etape 3 -  Installer l’application <code class="language-plaintext highlighter-rouge">cyk-demo</code> avec l’outil en ligne de commande <code class="language-plaintext highlighter-rouge">cyk</code></h2>
 
-<h3 id="listez-le-contenu-du-dossier-avec-la-commande-dir">Listez le contenu du dossier avec la commande DIR</h3>
+<h3 id="etape-31-listez-le-contenu-du-dossier-avec-la-commande-dir">Etape 3.1 Listez le contenu du dossier avec la commande DIR</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span><span class="nb">dir</span>
 <span class="go">
@@ -199,7 +245,7 @@ created docker-compose.yml
                4 Rép(s)  47 970 877 440 octets libres
 </span></code></pre></div></div>
 
-<h3 id="insérez-les-xml-dans-la-base-de-données">Insérez les XML dans la base de données</h3>
+<h3 id="etape-32-insérez-les-xml-dans-la-base-de-données">Etape 3.2 Insérez les XML dans la base de données</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk module upload db_init.xml actor_select.xml film.xml
 <span class="go">
@@ -212,7 +258,7 @@ module update film access undefined description film module
 module film updated
 </span></code></pre></div></div>
 
-<h2 id="etape-7---créez-les-tables-et-les-requêtes-de-la-base-de-données">Etape 7 - Créez les tables et les requêtes de la base de données</h2>
+<h3 id="etape-33---créez-les-tables-et-les-requêtes-de-la-base-de-données">Etape 3.3 - Créez les tables et les requêtes de la base de données</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk run db_init.xml
 <span class="go">
@@ -220,16 +266,16 @@ DBREMOTE_URL http://localhost:3000
 Module db_init has been executed
 </span></code></pre></div></div>
 
-<h2 id="etape-8---chargez-les-tables-de-la-base-de-données">Etape 8 - Chargez les tables de la base de données</h2>
+<h3 id="etape-34---chargez-les-tables-de-la-base-de-données">Etape 3.4 - Chargez les tables de la base de données</h3>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk table import <span class="nt">-d</span> data actor film film_actor
 <span class="go">
 
 </span></code></pre></div></div>
 
-<h2 id="etape-9---associer-lutilisateur-au-module-film">Etape 9 - Associer l’utilisateur au module film</h2>
+<h3 id="etape-35---associer-lutilisateur-au-module-film">Etape 3.5 - Associer l’utilisateur au module film</h3>
 
-<h3 id="lister-les-utilisateurs">Lister les utilisateurs</h3>
+<h4 id="etape-351--lister-les-utilisateurs">Etape 3.5.1  Lister les utilisateurs</h4>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk user list
 <span class="go">
@@ -244,7 +290,7 @@ ID | user_name |     user_email     | user_access | user_appli | user_disable
 Number of lines : 1
 </span></code></pre></div></div>
 
-<h3 id="modifier-le-champ-user_appli-de-lutilisateur">Modifier le champ user_appli de l’utilisateur</h3>
+<h4 id="etape-352--modifier-le-champ-user_appli-de-lutilisateur">Etape 3.5.2  Modifier le champ user_appli de l’utilisateur</h4>
 
 <div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\john\cyk-demo&gt;</span><span class="w"> </span>cyk user update <span class="nt">-i</span> 1 <span class="nt">-m</span> film
 <span class="go">
@@ -267,60 +313,6 @@ Number of lines : 1
 <p>Après la connexion, l’utilisateur cyk executera maintenant le module film</p>
 
 <p><img src="/images/module_film_form.png" alt="Film module" /></p>
-
-<p><a name="prerequisite"></a></p>
-<h1 id="logiciels-dont-linstallation-est-pré-requise">Logiciels dont l’installation est pré-requise</h1>
-
-<p><a name="install_git"></a></p>
-<h2 id="installer-git-pour-windows">Installer Git pour Windows</h2>
-
-<p>Aller au <a href="https://git-scm.com">site de téléchargement de Git</a>
-La page de téléchargement devrait se présenter ainsi :</p>
-
-<p><img src="/images/git_download_win.png" alt="Page de téléchargement de Git pour Windows" /></p>
-
-<p>Téléchargez et installer Git pour Windows</p>
-
-<p><a name="install_nodejs"></a></p>
-<h2 id="installer-nodejs">Installer NodeJS</h2>
-
-<p>Aller au <a href="https://www.nodejs.org">site de NodeJS</a>
-La page de téléchargement se présente comme suit :</p>
-
-<p><img src="/images/nodejs_homepage.png" alt="Page d'accueil de nodejs.org" /></p>
-
-<ul>
-  <li>Choisissez la version 16 LTS (Long Term Support)</li>
-  <li>Téléchargez et lancez le programme d’installation</li>
-  <li>Il n’est pas nécessaire d’installer l’option pour compiler les modules natifs</li>
-</ul>
-
-<p>Ouvrez un terminal et tapez la commande</p>
-
-<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">C:\Users\phili&gt;</span><span class="w"> </span>node <span class="nt">-v</span>
-<span class="go">
-v16.11.0
-</span></code></pre></div></div>
-<p>Cela devrait afficher la version du logiciel Node installé.</p>
-
-<p><a name="install_docker"></a></p>
-<h2 id="installer-docker-desktop-mac-windows">Installer Docker Desktop (Mac, Windows)</h2>
-
-<p>Aller sur le <a href="https://www.docker.com">site de Docker</a> :</p>
-
-<p><img src="/images/docker_homepage.png" alt="Page d'accueil de Docker" /></p>
-
-<p>Téléchargez et installez Docker Desktop
-Après la procédure d’installation, l’ordinateur doit redémarrer pour terminer la configuration de l’environnement.</p>
-
-<p><a name="install_code"></a></p>
-<h2 id="installer-visual-studio-code">Installer Visual Studio Code</h2>
-
-<p>Aller sur le <a href="https://code.visualstudio.com/">site de visual studio code</a></p>
-
-<p><img src="/images/vsc_homepage.png" alt="Accueil Visual Studio Code" /></p>
-
-<p>Téléchargez et installez la dernière version stable de Visual Studio Code</p>
 
 
       </div>
