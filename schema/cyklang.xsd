@@ -694,6 +694,7 @@
         <xs:attribute name="mandatory" type="xs:string"/>
         <xs:attribute name="grid-row" type="xs:string"/>
         <xs:attribute name="grid-column" type="xs:string"/>
+        <xs:attribute name="hidden" type="xs:string"/>
     </xs:complexType>
 
     <xs:complexType name="inputParameter">
