@@ -641,6 +641,7 @@
 
         <xs:attribute name="grid" type="xs:string"/>
         <xs:attribute name="grid-template-areas" type="xs:string"/>
+        <xs:attribute name="grid-template" type="xs:string"/>
         <xs:attribute name="grid-template-columns" type="xs:string"/>
         <xs:attribute name="grid-template-rows" type="xs:string"/>
         <xs:attribute name="grid-auto-rows" type="xs:string"/>
