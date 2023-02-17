@@ -677,6 +677,7 @@
             <xs:element name="select" type="selectComponent"/>
             <xs:element name="html" type="htmlComponent"/>
             <xs:element name="qimg" type="qimgComponent"/>
+            <xs:element name="form" type="formComponent"/>
         </xs:choice>
     </xs:group>
 
