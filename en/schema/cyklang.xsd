@@ -267,10 +267,15 @@
             <xs:documentation>
                 attribute [name] is the name of the variable to set or an expression evaluated to a variable.
                 The new value of the variable is determined by an expression or you can give the member variables of a new object that will be created.
+                In case of a string variable, you can set [literal] attribute to indicate that the value is not to be evaluated as an expression.
+                In case of a module object variable, you can specify [module] attribute to give the name of the module to load from the database
+    
             </xs:documentation>
         </xs:annotation>
         <xs:group ref="declareVariable_method" minOccurs="0" maxOccurs="unbounded"/>
         <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="literal" type="xs:string" fixed=""/>
+        <xs:attribute name="module" type="xs:string"/>
     </xs:complexType>
 
     <xs:complexType name="function_method" mixed="true">
@@ -744,6 +749,7 @@
         <xs:attribute name="label" type="xs:string"/>
         <xs:attribute name="validate_dialog" fixed=""/>
         <xs:attribute name="save" fixed=""/>
+        <xs:attribute name="if-dirty" fixed=""/>
         <xs:attribute name="closeform" fixed=""/>
 
         <xs:attribute name="grid-area" type="xs:string"/>
