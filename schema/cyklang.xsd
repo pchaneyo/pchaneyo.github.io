@@ -888,6 +888,7 @@
         <xs:attribute name="model"/>
         <xs:attribute name="label"/>
         <xs:attribute name="readonly" fixed=""/>
+        <xs:attribute name="clearable" fixed=""/>
 
         <xs:attribute name="grid-area" type="xs:string"/>
         <xs:attribute name="grid-column-start" type="xs:string"/>
