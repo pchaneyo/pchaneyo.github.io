@@ -459,6 +459,8 @@
                     <xs:enumeration value="text"></xs:enumeration>
                     <xs:enumeration value="date"></xs:enumeration>
                     <xs:enumeration value="bytea"></xs:enumeration>
+                    <xs:enumeration value="json"></xs:enumeration>
+                    <xs:enumeration value="jsonb"></xs:enumeration>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
