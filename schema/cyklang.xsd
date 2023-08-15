@@ -1061,6 +1061,7 @@
                 <xs:attribute name="name" use="required">
                     <xs:simpleType>
                         <xs:restriction base="identifier">
+                            <xs:enumeration value="visible"/>
                             <xs:enumeration value="table_name"/>
                             <xs:enumeration value="field_name"/>
                         </xs:restriction>
