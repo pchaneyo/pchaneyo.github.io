@@ -415,6 +415,7 @@
             <xs:element name="string" type="stringColumn"/>
             <xs:element name="datetime" type="datetimeColumn"/>
             <xs:element name="boolean" type="booleanColumn"/>
+            <xs:element name="object" type="objectColumn"/>
         </xs:choice>
     </xs:group>
 
@@ -492,6 +493,18 @@
             <xs:simpleType>
                 <xs:restriction base="xs:string">
                     <xs:enumeration value="boolean"></xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="objectColumn">
+        <xs:attribute name="name" type="identifier"/>
+        <xs:attribute name="type">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="jsonb"></xs:enumeration>
+                    <xs:enumeration value="json"></xs:enumeration>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
